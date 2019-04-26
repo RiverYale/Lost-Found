@@ -7,7 +7,7 @@ Page({
         canIUse: wx.canIUse('button.open-type.getUserInfo'),
         index: 0,
         schools: ['四川大学', '电子科技大学', '成都理工大学'],
-        mySchool: '选择高校'
+        mySchool: "选择高校"
     },
     
     enterHome: function(){
