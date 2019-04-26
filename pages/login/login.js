@@ -9,10 +9,6 @@ Page({
         schools: ['四川大学', '电子科技大学', '成都理工大学'],
         mySchool: '选择高校'
     },
-    
-    enterHome: function(){
-            
-    },
 
     bindPickerChange: function(e){
         this.setData({
