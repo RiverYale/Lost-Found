@@ -1,2 +1,9 @@
 <!--pages/add/add.wxml-->
-<text>我捡到界面</text>
+<image class='backgroundImage' src='/images/add-background.png'></image>
+<view class='container'>
+
+</view>
+<view class='caseTextContainer'>
+    <text class='upText'>— 本 月 招 领 情 况 —</text>
+    <text class='downText' space="emsp">{{addNum}}发布 | {{backNum}}找回</text>
+</view>

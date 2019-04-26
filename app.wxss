@@ -8,3 +8,10 @@
   padding: 100rpx 0;
   box-sizing: border-box;
 }  */
+
+.backgroundImage{
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  position: fixed;
+}
