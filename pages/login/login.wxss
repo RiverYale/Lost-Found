@@ -1,13 +1,13 @@
 /* pages/login/login.wxss */
 .loginButton{
   width: 15%;
-  height: 100rpx;
-  bottom: 70rpx;
+  height: 40px;
+  bottom: 5%;
   left: 75%;
   text-align: right;
-  line-height: 100rpx;
+  line-height: 33px;
   background: rgba(99, 99, 105, 0);
-  font-size: 60rpx;
+  font-size: 25px;
   color: rgb(255, 255, 255);
   position: fixed;
   z-index: 2;
@@ -19,17 +19,17 @@
 .container{
   display: flex;
   width: 80%;
-  height: 100rpx;
-  bottom: 70rpx;
+  height: 40px;
+  bottom: 5%;
   left: 10%;
-  line-height: 100rpx;
+  line-height: 40px;
   align-items: center;
   flex-direction: column;
   background: rgba(99, 99, 105, 0);
-  font-size: 50rpx;
+  font-size: 20px;
   color: rgb(255, 255, 255);
   position: fixed;
-  border: 4rpx solid white;
+  border: 1px solid white;
   border-radius: 100rpx;
   z-index: 1;
 }

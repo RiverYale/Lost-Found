@@ -1,6 +1,6 @@
 <!--pages/login/login.wxml-->
 <view>
-    <image class='backgroundImgae' src='/images/cover.png'></image>   
+    <image class='backgroundImage' src='/images/cover.png'></image>   
     <button class="loginButton" open-type="getUserInfo" bindgetuserinfo="getUserInfo" wx:if="{{mySchool !== '选择高校'}}">➡</button>
     <view class='container'>
         <picker bindchange='bindPickerChange' value='{{index}}' range="{{schools}}">{{mySchool}}</picker>
