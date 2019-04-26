@@ -1,4 +1,4 @@
 <!--pages/home/home.wxml-->
-<view class='container'>
+<view style='display: flex;align-items: center;flex-direction: column;'>
     <image class="userinfo-avatar" mode="cover" src="{{userInfo.avatarUrl}}"></image>
 </view>
