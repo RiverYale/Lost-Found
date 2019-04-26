@@ -3,6 +3,7 @@
     "pages/login/login",
     "pages/lost/lost",
     "pages/add/add",
+    "pages/test/test",
     "pages/home/home",
     "pages/index/index"
   ],
