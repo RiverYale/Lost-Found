@@ -1,5 +1,32 @@
 <!--pages/home/home.wxml-->
 <view class='userinfo-container'>
     <image class="userinfo-avatar" mode="cover" src="{{userInfo.avatarUrl}}"></image>
-    <text style='margin-top:5px'>{{userInfo.nickName}}</text>
+    <text style='margin-top:5px;font-size:20px;'>{{userInfo.nickName}}</text>
 </view>
+<view class='num-container'>
+    <view class='num-item' bindtap='tapAddNum'>
+        <text class='num-text'>我捡到</text>
+        <text class='num-num'>{{addNum}}</text>
+    </view>
+    <view class='line-ver'></view>
+    <view class='num-item' bindtap='tapLostNum'>
+        <text class='num-text'>我丢失</text>
+        <text class='num-num'>{{lostNum}}</text>
+    </view>
+</view>
+<view style='margin-top:5px;height:3px;' class='line-hor'></view>
+<view class='option-container' bindtap='tapInfo'>
+    <image class='icon' src='/images/info.png'></image>
+    <text>我的资料</text>
+</view>
+<view class='line-hor'></view>
+<view class='option-container' bindtap='tapFeedback'>
+    <image class='icon' src='/images/feedback.png'></image>
+    <text>我的反馈</text>
+</view>
+<view class='line-hor'></view>
+<view class='option-container' bindtap='tapService'>
+    <image class='icon' src='/images/service.png'></image>
+    <text>联系客服</text>
+</view>
+<view class='line-hor'></view>

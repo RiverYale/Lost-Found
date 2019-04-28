@@ -35,6 +35,11 @@ App({
   },
   globalData: {
     userInfo: null,
-    mySchool: "选择高校"
+    mySchool: "选择高校",
+    index: 0,
+    schools: ['四川大学', '电子科技大学', '成都理工大学'],
+    myCollege: '',
+    name: '',
+    studentId: ''
   }
 })

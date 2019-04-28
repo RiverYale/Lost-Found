@@ -5,7 +5,9 @@ Component({
     data: {
         userInfo: {},
         hasUserInfo: false,
-        canIUse: wx.canIUse('button.open-type.getUserInfo')
+        canIUse: wx.canIUse('button.open-type.getUserInfo'),
+        addNum: 0,
+        lostNum: 0
     },
 
     lifetimes: {
@@ -49,6 +51,49 @@ Component({
             })
             wx.setNavigationBarTitle({
                 title: '个人中心'
+            })
+        }
+    },
+
+    methods: {
+        tapAddNum: function () {
+            wx.navigateTo({
+                url: '/pages/myAdd/myAdd'
+            })
+        },
+
+        tapLostNum: function () {
+            wx.navigateTo({
+                url: '/pages/myLost/myLost'
+            })
+        },
+
+        tapInfo: function() {
+            wx.navigateTo({
+                url: '/pages/info/info'
+            })
+        },
+
+        tapFeedback: function() {
+            wx.navigateTo({
+                url: '/pages/feedback/feedback'
+            })
+        },
+
+        tapService: function() {
+            wx.showActionSheet({
+                itemList: ['QQ客服：00000000', 'QQ交流群：00000001'],
+                success(res) {
+                    if(res.tapIndex == 0){
+                        wx.setClipboardData({
+                            data: '00000000'
+                        })
+                    }else{
+                        wx.setClipboardData({
+                            data: '00000001'
+                        })
+                    }
+                }
             })
         }
     }

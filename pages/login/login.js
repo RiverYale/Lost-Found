@@ -6,7 +6,7 @@ Page({
         hasUserInfo: false,
         canIUse: wx.canIUse('button.open-type.getUserInfo'),
         index: 0,
-        schools: ['四川大学', '电子科技大学', '成都理工大学'],
+        schools: [],
         mySchool: '选择高校'
     },
 
@@ -16,6 +16,8 @@ Page({
             mySchool: this.data.schools[e.detail.value],
             hasUserInfo: true
         })
+        app.globalData.mySchool = this.data.mySchool
+        app.globalData.index = this.data.index
     },
 
     getUserInfo: function (e) {
@@ -41,7 +43,9 @@ Page({
 
     onLoad: function (options) {
         this.setData({
-            mySchool: app.globalData.mySchool
+            mySchool: app.globalData.mySchool,
+            schools: app.globalData.schools,
+            index: app.globalData.index
         })
         if (app.globalData.userInfo) {
             this.setData({

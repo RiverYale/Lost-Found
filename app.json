@@ -1,9 +1,14 @@
 {
     "pages": [
         "pages/login/login",
-        "pages/home/home",
         "pages/add/add",
         "pages/lost/lost",
+        "pages/home/home",
+        "pages/myAdd/myAdd",
+        "pages/myLost/myLost",
+        "pages/info/info",
+        "pages/feedback/feedback",
+        
         "pages/index/index"
     ],
     "tabBar": {
