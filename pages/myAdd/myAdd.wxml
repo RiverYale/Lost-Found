@@ -1,10 +1,12 @@
 <!--pages/myAdd/myAdd.wxml-->
 <view class='title'>我已发布的招领信息</view>
-<view wx:for='{{dataArray}}' class='item-container' wx:key='{{index}}'>
-    <view class='info-container'>
-        <text class='info-type'>{{item.type}}</text>
-        <text class='info-time'>{{item.time}}</text>
+<view wx:for='{{dataArray}}' wx:key='{{index}}'>
+    <view class='item-container'>
+        <view class='info-container'>
+            <text class='info-type'>{{item.type}}</text>
+            <text class='info-time'>{{item.time}}</text>
+        </view>
+        <button class='cancelBtn' bindtap='cancel' data-index='{{index}}'>撤销</button>
     </view>
-    <button class='cancelBtn' bindtap='cancel' data-index='{{index}}'>撤销</button>
+    <view class='line-hor' />
 </view>
-<view class='line-hor' />

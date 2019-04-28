@@ -12,9 +12,17 @@ page {
     font-size: 18px;
     height: 45px;
     align-items: center;
+    flex-direction: row;
 }
 
 .title{
     margin: 15px;
     margin-right: 45px;
+    word-break: keep-all;
+    white-space: nowrap;     
+}
+
+.title2{
+    margin: 15px;
+    width: 65px;
 }
