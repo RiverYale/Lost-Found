@@ -1,4 +1,20 @@
 /* pages/add/add.wxss */
+.container{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    top: 17%;
+    bottom: 95px;
+    left: 8%;
+    right: 8%;
+    background-color: white;
+    position: absolute;
+    border-radius: 5px;
+    border: 1px solid rgb(79, 135, 248);
+    font-size: 17px;
+    padding: 10px 20px;
+}
+
 .caseTextContainer{
     display: flex;
     width: 100%;
@@ -16,4 +32,60 @@
 
 .downText{
     font-size: 10px;
+}
+
+.title{
+    display: flex;
+    justify-content: space-around;
+    padding: 0px 15%;
+    padding-bottom: 5px;
+}
+
+.selected{
+    color: rgb(58, 58, 245);
+    /* text-decoration: underline; */
+}
+
+.submitBtn{
+    background-color: rgb(79, 135, 248);
+    color: white;
+    margin-top: 10px;
+    width: 90%;
+    border-radius: 20px;
+    font-size: 15px;
+    line-height: 35px;
+}
+.submitBtn::after{
+    border: none;   
+}
+
+input{
+    border: 2px solid rgba(128, 128, 128, 0.2);
+    min-height: 25px;
+    max-height: 25px;
+}
+
+.upload{
+    width: 120rpx;
+    height: 120rpx;
+    border: 1px solid rgba(128, 128, 128, 0.2);
+}
+
+.subtitle{
+    border: 2px solid rgba(128, 128, 128, 0.2);
+    right: 20px;
+    left: 70px; 
+    flex: 1;
+    height: 25px;
+    line-height: 25px;  
+    position: absolute;
+}
+
+.wrapper{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    align-content: space-between;
+    background-color: white;
+    margin: 10px 0px;
 }

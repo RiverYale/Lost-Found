@@ -2,22 +2,32 @@
 const app = getApp()
 Page({
     data: {
-        userInfo: {},
-        hasUserInfo: false,
-        canIUse: wx.canIUse('button.open-type.getUserInfo'),
+        userId: '',
         index: 0,
         schools: [],
-        mySchool: '选择高校'
+        school: '选择高校'
     },
 
+    onLoad: function (options) {
+        app.userIdReadyCallback = res => {
+            this.setData({ userId: app.globalData.userId })
+            if (!app.globalData.newUser)
+                wx.switchTab({ url: '/pages/lost/lost' })
+        }
+        if (!app.globalData.newUser)
+            wx.switchTab({ url: '/pages/lost/lost' })
+
+        this.setData({
+            schools: app.globalData.schools,
+            userId: app.globalData.userId
+        })
+    },
+    
     bindPickerChange: function(e){
         this.setData({
             index: e.detail.value,
-            mySchool: this.data.schools[e.detail.value],
-            hasUserInfo: true
+            school: this.data.schools[e.detail.value]
         })
-        app.globalData.mySchool = this.data.mySchool
-        app.globalData.index = this.data.index
     },
 
     getUserInfo: function (e) {
@@ -27,48 +37,27 @@ Page({
                 icon: 'none'
             })
         } else {
-            app.globalData.userInfo = e.detail.userInfo
-            this.setData({
-                userInfo: e.detail.userInfo,
-                hasUserInfo: true
-            })
-            wx.switchTab({
-                url: '/pages/lost/lost'
-            })
-            wx.showToast({
-                title: '绑定成功'
-            })
-        }
-    },
-
-    onLoad: function (options) {
-        this.setData({
-            mySchool: app.globalData.mySchool,
-            schools: app.globalData.schools,
-            index: app.globalData.index
-        })
-        if (app.globalData.userInfo) {
-            this.setData({
-                userInfo: app.globalData.userInfo,
-                hasUserInfo: true
-            })
-        } else if (this.data.canIUse) {
-            app.userInfoReadyCallback = res => {
-                this.setData({
-                    userInfo: res.userInfo,
-                    hasUserInfo: true
-                })
-            }
-        } else {
-            wx.getUserInfo({
-                success: res => {
-                    app.globalData.userInfo = res.userInfo
-                    this.setData({
-                        userInfo: res.userInfo,
-                        hasUserInfo: true
-                    })
+            wx.request({
+                url: 'http://jianghuling.top/account/firstEntrance',
+                method: 'POST',
+                header: { "Content-Type": "application/x-www-form-urlencoded" },
+                data: {
+                    userId: this.data.userId,
+                    university: this.data.school
+                },
+                success(res) {
+                    if (res.data.message == 'SUCCESS') {
+                        wx.switchTab({ url: '/pages/lost/lost' })
+                        wx.showToast({ title: '绑定成功' })
+                    } else {
+                        wx.showToast({
+                            icon: 'none',
+                            title: '绑定失败'
+                        })
+                    }
                 }
             })
+            app.globalData.userInfo = e.detail.userInfo
         }
     }
 })

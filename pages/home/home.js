@@ -10,8 +10,8 @@ Component({
         lostNum: 0
     },
 
-    lifetimes: {
-        attached() {
+    pageLifetimes: {
+        show() {
             if (app.globalData.userInfo) {
                 this.setData({
                     userInfo: app.globalData.userInfo,
@@ -35,49 +35,48 @@ Component({
                     }
                 })
             }
-        }
-    },
-
-    pageLifetimes: {
-        show() {
+            var that = this
+            wx.request({
+                url: 'http://jianghuling.top/account/mine',
+                method: 'POST',
+                header: { "Content-Type": "application/x-www-form-urlencoded" },
+                //app.globalData.userId
+                data: { userId: 'abcde' },
+                success(res) {
+                    if (res.data.message == 'SUCCESS') {
+                        that.setData({
+                            addNum: res.data.find_num,
+                            lostNum: res.data.lost_num
+                        })
+                    }
+                }
+            })
             if (typeof this.getTabBar === 'function' && this.getTabBar()) {
-                this.getTabBar().setData({
-                    selected: 2
-                })
+                this.getTabBar().setData({ selected: 2 })
             }
             wx.setNavigationBarColor({
                 frontColor: '#000000',
                 backgroundColor: '#ffffff'
             })
-            wx.setNavigationBarTitle({
-                title: '个人中心'
-            })
+            wx.setNavigationBarTitle({ title: '个人中心' })
         }
     },
 
     methods: {
         tapAddNum: function () {
-            wx.navigateTo({
-                url: '/pages/myAdd/myAdd'
-            })
+            wx.navigateTo({ url: '/pages/myAdd/myAdd' })
         },
 
         tapLostNum: function () {
-            wx.navigateTo({
-                url: '/pages/myLost/myLost'
-            })
+            wx.navigateTo({ url: '/pages/myLost/myLost' })
         },
 
         tapInfo: function() {
-            wx.navigateTo({
-                url: '/pages/info/info'
-            })
+            wx.navigateTo({ url: '/pages/info/info' })
         },
 
         tapFeedback: function() {
-            wx.navigateTo({
-                url: '/pages/feedback/feedback'
-            })
+            wx.navigateTo({ url: '/pages/feedback/feedback' })
         },
 
         tapService: function() {
@@ -85,13 +84,9 @@ Component({
                 itemList: ['QQ客服：00000000', 'QQ交流群：00000001'],
                 success(res) {
                     if(res.tapIndex == 0){
-                        wx.setClipboardData({
-                            data: '00000000'
-                        })
+                        wx.setClipboardData({ data: '00000000' })
                     }else{
-                        wx.setClipboardData({
-                            data: '00000001'
-                        })
+                        wx.setClipboardData({ data: '00000001' })
                     }
                 }
             })

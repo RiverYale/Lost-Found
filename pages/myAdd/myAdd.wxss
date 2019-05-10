@@ -32,20 +32,41 @@
     line-height: 1.5;
 }
 
-.info-type{
+.info-category{
     font-size: 18px;
 }
 
-.info-time{
+.info-description{
     color: rgb(175, 166, 165);
     font-size: 13px;
 }
 
+.info-take_place{
+    color: rgb(175, 166, 165);
+    font-size: 10px;
+}
+
+.info-line{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
 .cancelBtn{
-    width: 45px;
+    width: 55px;
     height: 25px;
     line-height: 25px;
     margin: 15px;
     padding: 0px;
     font-size: 12px;
+}
+
+.loadBtn{
+    height: 20px;
+    font-size: 12px;
+    line-height: 20px;
+    background-color: white;
+}
+.loadBtn::after{
+    border: none;
 }

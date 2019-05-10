@@ -1,11 +1,11 @@
 <!--pages/info/info.wxml-->
 <picker class='wrapper'  value='{{index}}' range="{{schools}}" bindchange='tapSchool'>
     <text class='title'>学校</text>
-    <text>{{mySchool}}</text>
+    <text>{{school}}</text>
 </picker>
 <view class='wrapper'>
     <text class='title'>学院</text>
-    <input value='{{myCollege}}' bindblur='editCollege'/>
+    <input value='{{college}}' bindblur='editCollege'/>
 </view>
 <view class='wrapper'>
     <text class='title'>姓名</text>
@@ -13,5 +13,5 @@
 </view>
 <view class='wrapper'>
     <text class='title'>学号</text>
-    <input value='{{studentId}}' bindblur='editStudentId'/>
+    <input value='{{stuId}}' maxlength='20' bindblur='editStudentId'/>
 </view>

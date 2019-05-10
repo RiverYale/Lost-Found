@@ -3,10 +3,14 @@
 <view wx:for='{{dataArray}}' wx:key='{{index}}'>
     <view class='item-container'>
         <view class='info-container'>
-            <text class='info-type'>{{item.type}}</text>
-            <text class='info-time'>{{item.time}}</text>
+            <view class='info-line'>
+                <text class='info-category'>{{item.category}}</text>
+                <text class='info-take_place' space='emsp'> {{item.take_place}}</text>
+            </view>
+            <text class='info-description'>{{item.description}}</text>
         </view>
-        <button class='cancelBtn' bindtap='cancel' data-index='{{index}}'>撤销</button>
+        <button class='cancelBtn' bindtap='cancel' data-index='{{index}}'>撤销发布</button>
     </view>
     <view class='line-hor' />
 </view>
+ <button class='loadBtn' bindtap='requestData' loading='{{isLoading}}'>加载不全？</button>

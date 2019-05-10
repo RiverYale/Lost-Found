@@ -34,3 +34,15 @@ page {
     border-radius: 15px;
     font-size: 15px;
 }
+.submitButton::after{
+    border: none;
+}
+
+.count{
+    text-align: right;
+    background-color: white;
+    padding: 5px;
+    font-size: 10px;
+    color: gray;
+    height: 15px;
+}

@@ -4,16 +4,17 @@
 		"ignore": []
 	},
 	"setting": {
-		"urlCheck": true,
+		"urlCheck": false,
 		"es6": true,
 		"postcss": true,
 		"minified": true,
 		"newFeature": true,
-		"autoAudits": false
+		"autoAudits": false,
+		"checkInvalidKey": true
 	},
 	"compileType": "miniprogram",
 	"libVersion": "2.6.6",
-	"appid": "wx3d13e1c58a5fa9c9",
+	"appid": "wx8d809cd9272a9b4d",
 	"projectname": "Lost%26Found",
 	"debugOptions": {
 		"hidedInDevtools": []

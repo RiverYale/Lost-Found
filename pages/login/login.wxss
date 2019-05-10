@@ -1,14 +1,14 @@
 /* pages/login/login.wxss */
 .loginButton{
   width: 15%;
-  height: 40px;
-  bottom: 5%;
+  height: 35px;
+  top: 30%;
   left: 75%;
   text-align: right;
-  line-height: 33px;
+  line-height: 35px;
   background: rgba(99, 99, 105, 0);
   font-size: 25px;
-  color: rgb(255, 255, 255);
+  color: black;
   position: fixed;
   z-index: 2;
 }
@@ -19,15 +19,15 @@
 .container{
   display: flex;
   width: 80%;
-  height: 40px;
-  bottom: 5%;
+  height: 35px;
+  top: 30%;
   left: 10%;
-  line-height: 40px;
+  line-height: 35px;
   align-items: center;
   flex-direction: column;
-  background: rgba(99, 99, 105, 0);
+  background: white;
   font-size: 20px;
-  color: rgb(255, 255, 255);
+  color: black;
   position: fixed;
   border: 1px solid white;
   border-radius: 100rpx;

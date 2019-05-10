@@ -1,2 +1,16 @@
 <!--pages/myLost/myLost.wxml-->
-<text>pages/myLost/myLost.wxml</text>
+<view class='title'>我的待领取信息</view>
+<view wx:for='{{dataArray}}' wx:key='{{index}}'>
+    <view class='item-container'>
+        <view class='info-container'>
+            <view class='info-line'>
+                <text class='info-category'>{{item.category}}</text>
+                <text class='info-take_place' space='emsp'> {{item.take_place}}</text>
+            </view>
+            <text class='info-description'>{{item.description}}</text>
+        </view>
+        <button class='cancelBtn' bindtap='cancel' data-index='{{index}}'>撤销领取</button>
+    </view>
+    <view class='line-hor' />
+</view>
+ <button class='loadBtn' bindtap='requestData' loading='{{isLoading}}'>加载不全？</button>
