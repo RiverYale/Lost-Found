@@ -1,9 +1,14 @@
 <!--pages/add/add.wxml-->
 <image class='backgroundImage' src='/images/add-background.png'></image>
+    <label>我捡到</label>
 <view class='container' wx:if='{{page == 0}}'>
     <view class='title'>
-        <text class='selected' bindtap='selectCard'>校园卡</text>
-        <text bindtap='selectOther'>其他</text>
+        <view class='selected'>
+            <text class='' bindtap='selectCard'>校园卡</text>
+        </view>
+        <view class='not-selected'>
+            <text bindtap='selectOther'>其他</text>
+        </view>
     </view>
     <text>姓名：</text>
     <input value='{{card_name}}' bindinput='cEditName'/>
@@ -17,8 +22,12 @@
 </view>
 <view  class='container' wx:else>
     <view class='title'>
-        <text bindtap='selectCard'>校园卡</text>
-        <text class='selected' bindtap='selectOther'>其他</text>
+        <view class='not-selected'>
+            <text bindtap='selectCard'>校园卡</text>
+        </view>
+        <view class='selected'>
+            <text class='' bindtap='selectOther'>其他</text>
+        </view>
     </view>
     <text>图片上传</text>
     <image class='upload' src='{{other_image}}' bindtap='chooseImage'/>
