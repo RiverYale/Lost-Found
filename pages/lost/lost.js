@@ -107,6 +107,7 @@ Page({
       iteminfo: array,
       isLoad: false,
       isLoadingMoreData: false,
+      cardplace:false,
     })
     var left = this.data.navLeftItems[e.currentTarget.dataset.index];
     this.lostrequest(left);
@@ -177,8 +178,10 @@ Page({
     let that = this;
     wx.getSystemInfo({
       success: function(res) {
+          console.log(res.windowHeight)
+          console.log(res.windowWidth)
         that.setData({
-          scrollHeight: res.windowHeight-159,
+            scrollHeight: res.windowHeight-336/750*res.windowWidth-48,
           loadingWidth: res.windowWidth,
         })
       },

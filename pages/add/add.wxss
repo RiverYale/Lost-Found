@@ -1,5 +1,6 @@
 /* pages/add/add.wxss */
 label{
+    
     background-color: rgb(73, 137, 230);
     color: white;
     border-radius: 10px;

@@ -2,6 +2,11 @@
 @import "../../colorui/main.wxss";
 @import "../../colorui/icon.wxss";
 
+.lost_container{
+  width: 100%;
+  height: 100%;
+}
+
 .btn {
   display: flex;
   flex-direction: row;
@@ -14,22 +19,24 @@
 
 .swiper_lost {
   width: 100%;
-  height: 200rpx;
+  height: 230rpx;
 }
 
 .slide-image {
   width: 100%;
+  height: 230rpx;
 }
 
 .btn_1 {
-  margin-left: 10px;
+  display: inline-block;
+  margin-left: 20rpx;
   height: 60rpx;
   width: 150rpx;
   line-height: 60rpx;
   border-radius: 30px;
   color: #30ab42;
   background: #f2f3f5;
-  font-size: 14px;
+  font-size: 28rpx;
   font-weight: 800;
   align-items: center;
   justify-content: center;
@@ -42,10 +49,12 @@
 }
 
 .container_cs {
-  width: 100%;
   display: flex;
   flex-direction: row;
-  margin-top: 3px;
+  width: 100%;
+  height: 100rpx;
+  margin-top: 6rpx;
+  align-items: center;
   background: rgba(255, 255, 255, 1);
   box-shadow: 0px 1px 0px 0px rgba(229, 229, 229, 1);
 }
@@ -53,7 +62,7 @@
 .lost_search {
   margin-left: 10px;
   height: 60rpx;
-  width: 720rpx;
+  width: 520rpx;
   font-weight: 300;
   background: #f2f3f5;
   border-radius: 98rpx;
@@ -105,8 +114,9 @@
 
 .nav_left {
   display: inline-block;
-  width: 23%;
-  height: 80%;
+  top: 230rpx;
+  width: 170rpx;
+  height: 880rpx;
   background: #fff;
   border-right: 2px solid #f2f3f5;
   text-align: center;
@@ -118,35 +128,34 @@
 .nav_left .nav_left_items {
   display: flex;
   flex-direction: row;
-  height: 45px;
-  line-height: 30px;
-  padding: 6px 0;
-  font-size: 30rpx;
+  height: 100rpx;
+  width: 100%;
+  align-items: center;
   font-weight: 600;
-  text-align: center;
 }
 
 .nav_left .nav_left_items.active {
+  display: flex;
+  flex-direction: row;
+  height: 100rpx;
+  width: 185rpx;
+  align-items: center;
   background: #f2f3f5;
-  width: 170rpx;
-  border-radius: 0 12rpx 12rpx 0;
   color: #30ab42;
+  border-radius: 0 15rpx 15rpx 0;
+  font-weight: 600;
 }
 
 .nav_left .nav_left_items .nav {
-  width: 100%;
+  width: 160rpx;
+  font-size: 28rpx;
 }
 
-.nav_left .nav_left_items .nav_ {
-  margin-right: 8rpx;
-  width: 91%;
-}
 
 .tixing {
-  margin-top: 8px;
-  margin-left: -5px;
-  height: 12px;
-  width: 3px;
+  margin-left: 7rpx;
+  height: 28rpx;
+  width: 6rpx;
   border-radius: 50rpx 0 0 50rpx;
   background: #30ab42;
 }
@@ -315,14 +324,14 @@
 
 .list {
   display: inline-block;
-  height: 36px;
-  line-height: 36px;
+  height: 72rpx;
+  line-height: 72rpx;
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
   text-align: left;
   width: 26%;
-  font-size: 14px;
+  font-size: 28rpx;
   font-family: MicrosoftYaHeiUI;
   font-weight: 400;
   color: rgba(51, 51, 51, 1);
@@ -330,14 +339,14 @@
 
 .list_name {
   display: inline-block;
-  height: 36px;
-  line-height: 36px;
+  height: 72rpx;
+  line-height: 72rpx;
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
   text-align: left;
   width: 20%;
-  font-size: 14px;
+  font-size: 28rpx;
   font-family: MicrosoftYaHeiUI;
   font-weight: 400;
   color: rgba(51, 51, 51, 1);
@@ -345,14 +354,14 @@
 
 .list_place {
   display: inline-block;
-  height: 36px;
-  line-height: 36px;
+  height: 72rpx;
+  line-height: 72rpx;
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
   text-align: left;
   width: 26%;
-  font-size: 14px;
+  font-size: 28rpx;
   font-family: MicrosoftYaHeiUI;
   font-weight: 400;
   color: rgba(51, 51, 51, 1);
@@ -360,14 +369,14 @@
 
 .list_place .list {
   display: inline-block;
-  height: 36px;
-  line-height: 36px;
+  height: 72rpx;
+  line-height: 72rpx;
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
   text-align: left;
   width: 100%;
-  font-size: 14px;
+  font-size: 28rpx;
   font-family: MicrosoftYaHeiUI;
   font-weight: 400;
   color: rgba(51, 51, 51, 1);
@@ -375,14 +384,14 @@
 
 .list_time {
   display: inline-block;
-  height: 36px;
-  line-height: 36px;
+  height: 72rpx;
+  line-height: 72rpx;
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
   text-align: left;
   width: 26%;
-  font-size: 14px;
+  font-size: 28rpx;
   font-family: MicrosoftYaHeiUI;
   font-weight: 400;
   color: rgba(51, 51, 51, 1);
@@ -391,8 +400,8 @@
 .lists {
   /* margin: 3px; */
   width: 100%;
-  height: 36px;
-  padding: 0px 6px 0px 12px;
+  height: 72rpx;
+  padding: 0px 12rpx 0px 24rpx;
   background: rgba(255, 255, 255, 1);
   /* border-bottom: 0px 1px 0px 0px rgba(229, 229, 229, 1); */
 }
@@ -401,46 +410,46 @@
   display: flex;
   flex-direction: row;
   width: 100%;
-  height: 40px;
-  padding: 6px 6px 6px 12px;
+  height: 80rpx;
+  padding: 12rpx 12rpx 12rpx 24rpx;
   background: rgba(255, 255, 255, 1);
   box-shadow: 0px 1px 0px 0px rgba(229, 229, 229, 1);
 }
 
 .head {
   justify-content: left;
-  height: 15px;
-  font-size: 16px;
+  height: 32rpx;
+  font-size: 32rpx;
   width: 26%;
   font-weight: 800;
 }
 
 .head_name {
   justify-content: left;
-  height: 15px;
-  font-size: 16px;
+  height: 32rpx;
+  font-size: 32rpx;
   width: 20%;
   font-weight: 800;
 }
 
 .btn_place {
-  margin-top: 8px;
+  margin-top: 16rpx;
   text-align-last: justify;
   justify-content: center;
-  border-radius: 15px;
+  border-radius: 30rpx;
   margin-left: 0px;
-  height: 20px;
-  width: 75px;
+  height: 40rpx;
+  width: 150rpx;
   background: #39b54a;
   color: #fff;
-  font-size: 13px;
+  font-size: 26rpx;
   font-family: MicrosoftYaHeiUI;
   font-weight: 400;
-  line-height: 20px;
+  line-height: 40rpx;
 }
 
 .scrollitem {
-  height: 400px;
+  height: 300px;
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -458,7 +467,7 @@
   margin-top: auto;
   margin-bottom: auto;
   color: #6f6a6a;
-  font-size: 13px;
+  font-size: 26rpx;
   font-weight: 500;
 }
 

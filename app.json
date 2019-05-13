@@ -1,8 +1,8 @@
 {
     "pages": [
-        "pages/add/add",
-        "pages/login/login",
         "pages/lost/lost",
+        "pages/login/login",
+        "pages/add/add",
         "pages/home/home",
         "pages/myAdd/myAdd",
         "pages/myLost/myLost",
@@ -38,7 +38,7 @@
     },
     "window": {
         "backgroundTextStyle": "light",
-        "navigationBarBackgroundColor": "#576CD3",
+        "navigationBarBackgroundColor": "#5673fd",
         "navigationBarTitleText": "iRstoo | 高校失物招领",
         "navigationBarTextStyle": "white"
     },
