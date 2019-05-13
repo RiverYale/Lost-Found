@@ -10,16 +10,6 @@ Component({
         count: 0
     },
 
-    lifetimes: {
-        attached() {
-            wx.setNavigationBarColor({
-                frontColor: '#000000',
-                backgroundColor: '#ffffff'
-            })
-            wx.setNavigationBarTitle({ title: '我的反馈' })
-        }
-    },
-
     methods: {
         textInput: function (e) {
             this.data.text = e.detail.value

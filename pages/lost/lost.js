@@ -32,7 +32,7 @@ Page({
       "其他"
     ],
     imgUrls: [
-      '../../images/lost-background.png'
+      '../../images/ad.jpg'
     ],
     indicatorDots: true,
     autoplay: true,
@@ -47,8 +47,8 @@ Page({
         header: {
           "content-type": "application/x-www-form-urlencoded"
         },
-        data: {
-          userId: that.data.cardinfo.lost_card_list[sindex].id,
+        data: { //app.globalData.userId
+          userId: "abcde",
           cardId: that.data.cardinfo.lost_card_list[sindex].id
         },
         method: 'POST',
@@ -65,8 +65,8 @@ Page({
         header: {
           "content-type": "application/x-www-form-urlencoded"
         },
-        data: {
-          userId: that.data.iteminfo.lost_item_list[this.data.itemid].item_id,
+        data: {  //app.globalData.userId
+          userId: "abcde",
           itemId: that.data.iteminfo.lost_item_list[this.data.itemid].item_id,
         },
         method: 'POST',

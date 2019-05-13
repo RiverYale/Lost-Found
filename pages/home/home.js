@@ -54,11 +54,6 @@ Component({
             if (typeof this.getTabBar === 'function' && this.getTabBar()) {
                 this.getTabBar().setData({ selected: 2 })
             }
-            wx.setNavigationBarColor({
-                frontColor: '#000000',
-                backgroundColor: '#ffffff'
-            })
-            wx.setNavigationBarTitle({ title: '个人中心' })
         }
     },
 

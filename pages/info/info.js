@@ -13,11 +13,6 @@ Component({
 
     lifetimes: {
         attached() {
-            wx.setNavigationBarColor({
-                frontColor: '#000000',
-                backgroundColor: '#ffffff'
-            })
-            wx.setNavigationBarTitle({ title: '编辑资料' })
             var that = this
             wx.request({
                 url: 'http://jianghuling.top/account/privateInfo',
