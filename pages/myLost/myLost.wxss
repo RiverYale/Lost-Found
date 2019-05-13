@@ -1,5 +1,7 @@
 /* pages/myLost/myLost.wxss */
-.title {
+@import "../myAdd/myAdd.wxss";
+
+/* .title {
     display: flex;
     align-items: center;
     background-color: rgb(245, 245, 245);
@@ -69,4 +71,4 @@
 }
 .loadBtn::after{
     border: none;
-}
+} */

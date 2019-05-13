@@ -5,7 +5,7 @@ Component({
     data: {
         isLoading: false,
         pageNo: 0,
-        pageSize: 10,
+        pageSize: 15,
         dataArray: []
     },
 

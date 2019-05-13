@@ -1,4 +1,5 @@
 /**app.wxss**/
+
 .backgroundImage{
   width: 100%;
   height: 100%;
