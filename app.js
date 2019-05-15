@@ -2,7 +2,7 @@
 App({
     globalData: {
         userInfo: null,
-        schools: ['四川大学', '电子科技大学', '成都理工大学'],
+        schools: ['四川大学'],
         userId: '',
         newUser: true
     },

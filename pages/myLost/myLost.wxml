@@ -1,5 +1,5 @@
 <!--pages/myLost/myLost.wxml-->
-<view class='title'>我的待领取信息</view>
+<view class='title'>我的认领信息</view>
 <view wx:for='{{dataArray}}' wx:key='{{index}}'>
     <view class='item-container'>
         <view class='info-container'>
@@ -13,4 +13,4 @@
     </view>
     <view class='line-hor' />
 </view>
- <button class='loadBtn' bindtap='requestData' loading='{{isLoading}}'>加载不全？</button>
+<button class='loadBtn' bindtap='requestData' loading='{{isLoading}}'>加载不全？</button>

@@ -1,7 +1,7 @@
 <!--pages/myAdd/myAdd.wxml-->
 <view class='title'>我已发布的招领信息</view>
 <view wx:for='{{dataArray}}' wx:key='{{index}}'>
-    <view class='item-container'>
+    <view class='item-container' >
         <view class='info-container'>
             <view class='info-line'>
                 <text class='info-category'>{{item.category}}</text>
@@ -9,7 +9,10 @@
             </view>
             <text class='info-description'>{{item.description}}</text>
         </view>
-        <button class='cancelBtn' bindtap='cancel' data-index='{{index}}'>撤销发布</button>
+        <!-- 发布中 -->
+        <button wx:if='{{item.state == 0}}' class='cancelBtn' bindtap='cancel' data-index='{{index}}'>撤销发布</button>
+        <!-- 被领取 -->
+        <label wx:elif='{{item.state == 1}}' style='color:green;' class='cancelBtn'>已被领取</label>
     </view>
     <view class='line-hor' />
 </view>

@@ -81,6 +81,7 @@ Component({
             let that = this
             wx.chooseImage({
                 count: 1,
+                sizeType: ['compressed'],
                 success: function(res) {
                     that.setData({ 
                         other_image: res.tempFilePaths[0],
