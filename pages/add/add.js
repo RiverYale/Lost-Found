@@ -39,12 +39,12 @@ Component({
         refreshStatistic: function() {
             let that = this
             wx.request({
-                url: 'http://jianghuling.top/lost/statistics',
+                url: app.globalData.url+'/lost/statistics',
                 method: 'POST',
                 header: { "Content-Type": "application/x-www-form-urlencoded" },
                 success(res) {
                     if (res.data.message == 'SUCCESS') {
-                        console.log(res.data)
+                        // console.log(res.data)
                         that.setData({
                             addNum: res.data.lost_num,
                             backNum: res.data.find_num
@@ -133,7 +133,7 @@ Component({
             this.setData({ loading: true })
             if(this.data.page == 0){
                 wx.request({
-                    url: 'http://jianghuling.top/lost/card',
+                    url: app.globalData.url + '/lost/card',
                     method: 'POST',
                     header: { "Content-Type": "application/x-www-form-urlencoded" },
                     data: { // 'abcde'
@@ -164,7 +164,7 @@ Component({
                 })
             }else{
                 wx.uploadFile({
-                    url: 'http://jianghuling.top/lost/item',
+                    url: app.globalData.url + '/lost/item',
                     filePath: this.data.other_image,
                     name: 'image',
                     formData: { // 'abcde'

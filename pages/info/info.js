@@ -15,7 +15,7 @@ Component({
         attached() {
             var that = this
             wx.request({
-                url: 'http://jianghuling.top/account/privateInfo',
+                url: app.globalData.url + '/account/privateInfo',
                 method: 'POST',
                 header: { "Content-Type": "application/x-www-form-urlencoded" },
                 data: { userId: app.globalData.userId },
@@ -55,7 +55,7 @@ Component({
                 school: this.data.schools[e.detail.value]
             })
             wx.request({
-                url: 'http://jianghuling.top/account/bindUniv',
+                url: app.globalData.url + '/account/bindUniv',
                 method: 'POST',
                 header: { "Content-Type": "application/x-www-form-urlencoded" },
                 data: {
@@ -69,7 +69,7 @@ Component({
             var that = this
             this.setData({ college: e.detail.value })
             wx.request({
-                url: 'http://jianghuling.top/account/bindCollege',
+                url: app.globalData.url + '/account/bindCollege',
                 method: 'POST',
                 header: { "Content-Type": "application/x-www-form-urlencoded" },
                 data: {
@@ -83,7 +83,7 @@ Component({
             var that = this
             this.setData({ name: e.detail.value })
             wx.request({
-                url: 'http://jianghuling.top/account/bindName',
+                url: app.globalData.url + '/account/bindName',
                 method: 'POST',
                 header: { "Content-Type": "application/x-www-form-urlencoded" },
                 data: {
@@ -97,7 +97,7 @@ Component({
             var that = this
             this.setData({ stuId: e.detail.value })
             wx.request({
-                url: 'http://jianghuling.top/account/bindStuId',
+                url: app.globalData.url + '/account/bindStuId',
                 method: 'POST',
                 header: { "Content-Type": "application/x-www-form-urlencoded" },
                 data: {

@@ -4,7 +4,8 @@ App({
         userInfo: null,
         schools: ['四川大学'],
         userId: '',
-        newUser: true
+        newUser: true,
+        url: 'https://aneoncode.com'
     },
     
     onLaunch: function() {
@@ -13,7 +14,7 @@ App({
             success(res) {
                 if (res.code) {
                     wx.request({
-                        url: 'http://jianghuling.top/account/login',
+                        url: that.globalData.url+'/account/login',
                         method: 'POST',
                         header: { "Content-Type": "application/x-www-form-urlencoded" },
                         data: { jscode: res.code },

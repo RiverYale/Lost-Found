@@ -20,7 +20,7 @@ Component({
             this.setData({ isLoading: true })
             let that = this
             wx.request({
-                url: 'http://jianghuling.top/lost/myLost',
+                url: app.globalData.url + '/lost/myLost',
                 method: 'POST',
                 header: { "Content-Type": "application/x-www-form-urlencoded" },
                 data: { // 'abcde'
@@ -44,7 +44,7 @@ Component({
         refreshData: function (i) {
             let that = this
             wx.request({
-                url: 'http://jianghuling.top/lost/cancelClm',
+                url: app.globalData.url + '/lost/cancelClm',
                 method: 'POST',
                 header: { "Content-Type": "application/x-www-form-urlencoded" },
                 data: {
@@ -57,7 +57,7 @@ Component({
                         let pn = that.data.dataArray.length / that.data.pageSize
                         pn = parseInt(pn)
                         wx.request({
-                            url: 'http://jianghuling.top/lost/myLost',
+                            url: app.globalData.url + '/lost/myLost',
                             method: 'POST',
                             header: { "Content-Type": "application/x-www-form-urlencoded" },
                             data: { // 'abcde'

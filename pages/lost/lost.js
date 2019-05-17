@@ -46,7 +46,7 @@ Page({
     var that = this;
     if (kind == "card") {
       wx.request({
-        url: "http://jianghuling.top/lost/claim/card",
+        url: app.globalData.url + "/lost/claim/card",
         header: {
           "content-type": "application/x-www-form-urlencoded"
         },
@@ -77,7 +77,7 @@ Page({
       })
     } else {
       wx.request({
-        url: "http://jianghuling.top/lost/claim/item",
+        url: app.globalData.url + "/lost/claim/item",
         header: {
           "content-type": "application/x-www-form-urlencoded"
         },
@@ -219,7 +219,7 @@ Page({
   lostrequest: function(left) {
     var that = this;
     wx.request({
-      url: 'http://jianghuling.top/lost/showInfo',
+      url: app.globalData.url + '/lost/showInfo',
       data: {
         pageNo: this.data.nowPage, //设置为全局变量，在每次切换栏目的后都会重新清零
         pageSize: 10,
@@ -293,7 +293,7 @@ Page({
   searchcard: function(keyword) {
     var that = this;
     wx.request({
-      url: 'http://jianghuling.top/lost/searchCard',
+      url: app.globalData.url + '/lost/searchCard',
       data: {
         name: keyword,
       },
@@ -316,7 +316,7 @@ Page({
   searchitem: function(category, keyword) {
     var that = this;
     wx.request({
-      url: 'http://jianghuling.top/lost/searchItem',
+      url: app.globalData.url + '/lost/searchItem',
       data: {
         category: category,
         desc: keyword,

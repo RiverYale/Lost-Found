@@ -37,7 +37,7 @@ Component({
             }
             var that = this
             wx.request({
-                url: 'http://jianghuling.top/account/mine',
+                url: app.globalData.url + '/account/mine',
                 method: 'POST',
                 header: { "Content-Type": "application/x-www-form-urlencoded" },
                 data: { userId: app.globalData.userId }, // 'abcde'

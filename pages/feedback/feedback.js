@@ -39,7 +39,7 @@ Component({
                 this.setData({ loading: true })
                 var that = this
                 wx.request({
-                    url: 'http://jianghuling.top/cst/comment',
+                    url: app.globalData.url + '/cst/comment',
                     method: 'POST',
                     header: { "Content-Type": "application/x-www-form-urlencoded" },
                     data: {

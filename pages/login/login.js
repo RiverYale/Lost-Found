@@ -38,7 +38,7 @@ Page({
             })
         } else {
             wx.request({
-                url: 'http://jianghuling.top/account/firstEntrance',
+                url: app.globalData.url + '/account/firstEntrance',
                 method: 'POST',
                 header: { "Content-Type": "application/x-www-form-urlencoded" },
                 data: {
