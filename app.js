@@ -18,11 +18,12 @@ App({
                         method: 'POST',
                         header: { "Content-Type": "application/x-www-form-urlencoded" },
                         data: { jscode: res.code },
-                        success(res) {
-                            if (res.data.message == 'SUCCESS') {
-                                that.globalData.userId = res.data.userId
-                                if (res.data.code == 1) that.globalData.newUser = false
-                                if (that.userIdReadyCallback) that.userIdReadyCallback(res)
+                        success(res2) {
+                            if (res2.data.message == 'SUCCESS') {
+                                console.log(res2.data)
+                                that.globalData.userId = res2.data.userId
+                                if (res2.data.code == 1) that.globalData.newUser = false
+                                if (that.userIdReadyCallback) that.userIdReadyCallback(res2)
                             }
                         }
                     })
