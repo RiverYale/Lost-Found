@@ -20,15 +20,10 @@ App({
                         success(res) {
                             if (res.data.message == 'SUCCESS') {
                                 that.globalData.userId = res.data.userId
-                                // if (res.data.code == 1) that.globalData.newUser = false
+                                if (res.data.code == 1) that.globalData.newUser = false
                                 if (that.userIdReadyCallback) that.userIdReadyCallback(res)
                             }
                         }
-                    })
-                } else {
-                    wx.showToast({
-                        title: '请求错误',
-                        icon: 'none'
                     })
                 }
             }

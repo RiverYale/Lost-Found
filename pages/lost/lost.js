@@ -1,6 +1,9 @@
 // pages/lost.js
+const app = getApp()
+
 Page({
   data: {
+    cmsg: '',
     scrollHeight: '',
     loadingWidth: '',
     showplace: false,
@@ -47,13 +50,26 @@ Page({
         header: {
           "content-type": "application/x-www-form-urlencoded"
         },
-        data: { //app.globalData.userId
-          userId: "abcde",
+        data: {  // 'abcde'
+          userId: app.globalData.userId,
           cardId: that.data.cardinfo.lost_card_list[sindex].id
         },
         method: 'POST',
         success: function(res) {
           console.log("请求成功")
+          if (res.data.code == 1) {
+            that.setData({
+              cardplace_index: sindex,
+              cardplace: true
+            })
+          } else {
+            that.setData({
+              cardplace_index: sindex,
+              cmsg: res.data.message,
+              cardplace: false
+            })
+            that.showModal(res.data.message)
+          }
         },
         fail: function() {
           console.log("请求失败")
@@ -65,19 +81,32 @@ Page({
         header: {
           "content-type": "application/x-www-form-urlencoded"
         },
-        data: {  //app.globalData.userId
-          userId: "abcde",
+        data: { // 'abcde'
+          userId: app.globalData.userId,
           itemId: that.data.iteminfo.lost_item_list[this.data.itemid].item_id,
         },
         method: 'POST',
         success: function(res) {
           console.log("请求成功")
+          console.log(res)
+          if (res.data.code == 1) {
+            that.setData({
+              showplace: true
+            })
+          } else {
+            that.showModal(res.data.message)
+            that.setData({
+              cmsg: res.data.message
+            })
+          }
         },
         fail: function() {
           console.log("请求失败")
         }
       })
     }
+    //console.log(this.data.code)
+    //console.log("out")
   },
   changebtn: function(e) {
     this.setData({
@@ -107,7 +136,7 @@ Page({
       iteminfo: array,
       isLoad: false,
       isLoadingMoreData: false,
-      cardplace:false,
+      cardplace: false,
     })
     var left = this.data.navLeftItems[e.currentTarget.dataset.index];
     this.lostrequest(left);
@@ -127,20 +156,12 @@ Page({
   showitemsplace: function(e) {
     var kind = e.currentTarget.id;
     var sindex = this.data.itemid;
-    this.setData({
-      showplace: true
-    })
     this.suretoget(kind, sindex);
   },
 
   cardplacekit: function(e) {
-    //console.log(e)
     var kind = e.currentTarget.id;
     var sindex = e.currentTarget.dataset.index;
-    this.setData({
-      cardplace_index: sindex,
-      cardplace: true,
-    })
     this.suretoget(kind, sindex);
   },
 
@@ -170,24 +191,31 @@ Page({
       zhezhao1: false,
     })
   },
-  onLoad: function(url, postData) {
-    var left = "校园卡";
-    this.lostrequest(left);
-  },
+  //设置onload会在逻辑上与onshow产生冲突
+  // onLoad: function(url, postData) {
+  //   var left = "校园卡";
+  //   this.lostrequest(left);
+  // },
   onReady: function() {
     let that = this;
     wx.getSystemInfo({
       success: function(res) {
-          console.log(res.windowHeight)
-          console.log(res.windowWidth)
         that.setData({
-            scrollHeight: res.windowHeight-336/750*res.windowWidth-48,
+          scrollHeight: res.windowHeight - 336 / 750 * res.windowWidth - 48,
           loadingWidth: res.windowWidth,
         })
       },
     })
   },
-
+  onShow: function() {
+    this.setData({
+      cardinfo: [],
+      showplace:false,
+      cardplace: false
+    })
+    var left = "校园卡";
+    this.lostrequest(left);
+  },
   lostrequest: function(left) {
     var that = this;
     wx.request({
@@ -300,7 +328,7 @@ Page({
       success: function(res) {
         that.setData({
           iteminfo: res.data,
-          isLoadingMoreData:false
+          isLoadingMoreData: false
         })
       },
       fail: function(res) {
@@ -311,10 +339,10 @@ Page({
   },
 
   loadMoreData: function() {
-    if(this.data.isLoadingMoreData == true){
-      return ;
+    if (this.data.isLoadingMoreData == true) {
+      return;
     }
-    console.log("hhh")
+    // console.log("hhh")
     var that = this;
     var p = this.data.nowPage + 1;
     this.setData({
@@ -326,4 +354,15 @@ Page({
       that.lostrequest(left); //数据请求
     }, 600) //延迟时间 这里是1秒
   },
+  showModal(message) {
+    this.setData({
+      modalName: 'Modal',
+      failtogetmsg: message
+    })
+  },
+  hideModal() {
+    this.setData({
+      modalName: null
+    })
+  }
 })

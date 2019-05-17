@@ -75,9 +75,6 @@
 }
 
 .nav_right {
-  /* display: flex;
-  flex-direction: row; *//* display: inline-block;
-  width: 100%; */
   height: 100%;
   padding: 20rpx;
   margin-left: 5px;
@@ -116,13 +113,12 @@
   display: inline-block;
   top: 230rpx;
   width: 170rpx;
-  height: 880rpx;
+  height: 100%;
   background: #fff;
   border-right: 2px solid #f2f3f5;
   text-align: center;
   position: absolute;
   z-index: 100;
-  /* border-radius: 15rpx; */
 }
 
 .nav_left .nav_left_items {
@@ -398,12 +394,10 @@
 }
 
 .lists {
-  /* margin: 3px; */
   width: 100%;
   height: 72rpx;
   padding: 0px 12rpx 0px 24rpx;
   background: rgba(255, 255, 255, 1);
-  /* border-bottom: 0px 1px 0px 0px rgba(229, 229, 229, 1); */
 }
 
 .heads {
@@ -473,5 +467,4 @@
 
 .input_search {
   text-align: left;
-  /* font-size: 16px; *//* display: inline-block; *//* padding-top: 3px; */
 }

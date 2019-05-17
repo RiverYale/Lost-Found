@@ -19,7 +19,7 @@ Page({
 
         this.setData({
             schools: app.globalData.schools,
-            userId: app.globalData.userId
+            userId: app.globalData.userId 
         })
     },
     

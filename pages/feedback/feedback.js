@@ -7,10 +7,19 @@ Component({
         phoneInput: '选填，便于我们联系你',
         text: '',
         num: '',
-        count: 0
+        count: 0,
+        loading: false
     },
 
     methods: {
+        connectFail: function () {
+            wx.showToast({
+                title: '好像出了点问题...',
+                icon: 'none'
+            })
+            this.setData({ loading: false })
+        },
+
         textInput: function (e) {
             this.data.text = e.detail.value
             this.setData({ count: e.detail.value.length })
@@ -27,6 +36,7 @@ Component({
                     icon: 'none'
                 })
             }else{
+                this.setData({ loading: true })
                 var that = this
                 wx.request({
                     url: 'http://jianghuling.top/cst/comment',
@@ -43,17 +53,11 @@ Component({
                                 title: '提交成功'
                             })
                         }else{
-                            wx.showToast({
-                                icon: 'none',
-                                title: '提交失败'
-                            })
+                            that.connectFail()
                         }
                     },
                     fail(res){
-                        wx.showToast({
-                            icon: 'none',
-                            title: '提交失败'
-                        })
+                        that.connectFail()
                     }
                 })
             }

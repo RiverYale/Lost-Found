@@ -18,7 +18,7 @@
     <input value='{{card_stuId}}' bindinput='cEditStuId' maxlength='20'/>
     <text>招领地点：</text>
     <input value='{{card_location}}' bindinput='cEditLocation'/>
-    <button class='submitBtn' bindtap='submit' loading='{{loading}}'>点击提交</button>
+    <button class='submitBtn' bindtap='submit' disabled='{{loading}}' loading='{{loading}}'>点击提交</button>
 </view>
 <view  class='container' wx:else>
     <view class='title'>
@@ -41,7 +41,7 @@
     <input value='{{other_description}}' bindinput='oEditDescription'/>
     <text>招领地点/联系方式:</text>
     <input value='{{other_location}}' bindinput='oEditLocation'/>
-    <button class='submitBtn' bindtap='submit' loading='{{loading}}'>点击提交</button>
+    <button class='submitBtn' bindtap='submit'  disabled='{{loading}}' loading='{{loading}}'>点击提交</button>
 </view>
 <view class='caseTextContainer'>
     <text class='upText'>— 本 月 招 领 情 况 —</text>

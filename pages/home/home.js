@@ -40,8 +40,7 @@ Component({
                 url: 'http://jianghuling.top/account/mine',
                 method: 'POST',
                 header: { "Content-Type": "application/x-www-form-urlencoded" },
-                //app.globalData.userId
-                data: { userId: 'abcde' },
+                data: { userId: app.globalData.userId }, // 'abcde'
                 success(res) {
                     if (res.data.message == 'SUCCESS') {
                         that.setData({

@@ -27,7 +27,7 @@ page {
 }
 
 .submitButton{
-    background-color: rgb(129, 207, 238);
+    background: rgb(129, 207, 238);
     color: white;
     margin: 10px;
     margin-top: 15px;
@@ -36,6 +36,10 @@ page {
 }
 .submitButton::after{
     border: none;
+}
+.submitButton[disabled] {
+    color: white !important;
+    background: rgb(219, 215, 215) !important;
 }
 
 .count{

@@ -21,7 +21,7 @@ Component({
                 data: { userId: app.globalData.userId },
                 success(res) {
                     if (res.data.message == 'SUCCESS') {
-                        console.log(res.data)
+                        // console.log(res.data)
                         that.setData({
                             school: res.data.university,
                             college: res.data.college,
@@ -29,13 +29,25 @@ Component({
                             stuId: res.data.stuId,
                             schools: app.globalData.schools
                         })
+                    }else{
+                        that.connectFail()
                     }
+                },
+                fail(res) {
+                    that.connectFail()
                 }
             })
         }
     },
 
     methods: {
+        connectFail: function () {
+            wx.showToast({
+                title: '好像出了点问题...',
+                icon: 'none'
+            })
+        },
+
         tapSchool: function (e) {
             var that = this
             this.setData({

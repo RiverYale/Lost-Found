@@ -9,7 +9,14 @@
             </view>
             <text class='info-description'>{{item.description}}</text>
         </view>
-        <button class='cancelBtn' bindtap='cancel' data-index='{{index}}'>撤销领取</button>
+        <!-- 发布中 -->
+        <label wx:if='{{item.state == 0}}' style='color:green;' class='cancelBtn'>发布中</label>
+        <!-- 被领取 -->
+        <button wx:elif='{{item.state == 1}}' class='cancelBtn' bindtap='cancel' data-index='{{index}}'>撤销领取</button>
+        <!-- 已撤销 -->
+        <label wx:elif='{{item.state == 2}}' style='color:red;' class='cancelBtn'>已撤销</label>
+
+        
     </view>
     <view class='line-hor' />
 </view>

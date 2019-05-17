@@ -31,7 +31,7 @@ startdate: 2019/4/28
       </block>
     </view>
   </view>
-  
+
   <scroll-view scroll-y='true' style="height : {{scrollHeight}}px" class='scrollitem' bindscrolltolower="loadMoreData">
 
     <view class="{{curNav==0?'hiden':'nav_right'}}">
@@ -103,6 +103,20 @@ startdate: 2019/4/28
       <view class='showitemplacewrap'>
         <button class="{{showplace == false? 'watch':'hiden'}}" id='item' bindtap='showitemsplace'>确认领取并查看领取方式</button>
         <view class="{{showplace == false? 'hiden':'itemplace'}}">您的失物在：{{iteminfo.lost_item_list[itemid].takePlace}}</view>
+      </view>
+    </view>
+  </view>
+
+  <view class="cu-modal {{modalName=='Modal'?'show':''}}">
+    <view class="cu-dialog" style='width:70%;'>
+      <view class="cu-bar bg-white justify-end">
+        <view class="content">确认失败</view>
+        <view class="action" bindtap="hideModal">
+          <text class="cuIcon-close text-red"></text>
+        </view>
+      </view>
+      <view class="padding-xl">
+      {{cmsg}}
       </view>
     </view>
   </view>

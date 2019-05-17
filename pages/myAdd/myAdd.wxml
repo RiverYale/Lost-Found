@@ -13,6 +13,8 @@
         <button wx:if='{{item.state == 0}}' class='cancelBtn' bindtap='cancel' data-index='{{index}}'>撤销发布</button>
         <!-- 被领取 -->
         <label wx:elif='{{item.state == 1}}' style='color:green;' class='cancelBtn'>已被领取</label>
+        <!-- 已撤销 -->
+        <label wx:elif='{{item.state == 2}}' style='color:red;' class='cancelBtn'>已撤销</label>
     </view>
     <view class='line-hor' />
 </view>

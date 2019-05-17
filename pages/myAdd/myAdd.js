@@ -23,14 +23,13 @@ Component({
                 url: 'http://jianghuling.top/lost/myPick',
                 method: 'POST',
                 header: { "Content-Type": "application/x-www-form-urlencoded" },
-                data: {     //app.globalData.userId
-                    userId: 'abcde',
+                data: { // 'abcde'
+                    userId: app.globalData.userId,
                     pageNo: this.data.pageNo,
                     pageSize: this.data.pageSize
                 },
                 success(res) {
                     if (res.data.message == 'SUCCESS') {
-                        console.log(res.data)
                         let temp = that.data.dataArray.concat(res.data.lost_list)
                         that.setData({ 
                             dataArray: temp,
@@ -44,8 +43,6 @@ Component({
 
         refreshData: function (i) {
             let that = this
-            console.log(this.data.dataArray[i].id)
-            console.log(this.data.dataArray[i].category)
             wx.request({
                 url: 'http://jianghuling.top/lost/cancelPub',
                 method: 'POST',
@@ -63,8 +60,8 @@ Component({
                             url: 'http://jianghuling.top/lost/myPick',
                             method: 'POST',
                             header: { "Content-Type": "application/x-www-form-urlencoded" },
-                            data: {
-                                userId: 'abcde',
+                            data: { // 'abcde'
+                                userId: app.globalData.userId,
                                 pageNo: pn,
                                 pageSize: that.data.pageSize
                             },
@@ -72,9 +69,12 @@ Component({
                                 if (res2.data.message == 'SUCCESS') {
                                     var temp1 = that.data.dataArray[that.data.dataArray.length-1]
                                     var temp2 = res2.data.lost_list[res2.data.lost_list.length - 1]
-                                    if(temp1.id != temp2.id)
+                                    if(!temp1 || temp1.id != temp2.id)
                                         that.data.dataArray.push(res2.data.lost_list[res2.data.lost_list.length - 1])
-                                    that.setData({ dataArray: that.data.dataArray })
+                                    if (that.data.dataArray == undefined)
+                                        that.setData({ dataArray: [] })
+                                    else
+                                        that.setData({ dataArray: that.data.dataArray })
                                 }
                             }
                         })

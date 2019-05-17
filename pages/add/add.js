@@ -6,7 +6,7 @@ Component({
         card_name: '',
         card_college: '',
         card_stuId: '',
-        card_loaction: '',
+        card_location: '',
         other_image: '/images/upload.png',
         other_category: '',
         other_description: '',
@@ -15,7 +15,7 @@ Component({
         hasImage: false,
         loading: false,
         index: 0,
-        category: ['U盘', '雨伞', '钱包证件', '电子产品', '其他']
+        category: ['优盘', '雨伞', '钱包证件', '电子产品', '其他']
     },
     
     pageLifetimes: {
@@ -28,6 +28,14 @@ Component({
     },
 
     methods: {
+        connectFail: function() {
+            wx.showToast({
+                title: '好像出了点问题...',
+                icon: 'none'
+            })
+            this.setData({ loading: false })
+        },
+
         refreshStatistic: function() {
             let that = this
             wx.request({
@@ -36,9 +44,10 @@ Component({
                 header: { "Content-Type": "application/x-www-form-urlencoded" },
                 success(res) {
                     if (res.data.message == 'SUCCESS') {
+                        console.log(res.data)
                         that.setData({
                             addNum: res.data.lost_num,
-                            backum: res.data.find_num
+                            backNum: res.data.find_num
                         })
                     }
                 }
@@ -127,8 +136,8 @@ Component({
                     url: 'http://jianghuling.top/lost/card',
                     method: 'POST',
                     header: { "Content-Type": "application/x-www-form-urlencoded" },
-                    data: { //app.globalData.userId
-                        userId: 'abcde',
+                    data: { // 'abcde'
+                        userId: app.globalData.userId,
                         name: this.data.card_name,
                         college: this.data.card_college,
                         stuId: this.data.card_stuId,
@@ -145,7 +154,12 @@ Component({
                                 card_location: '',
                                 loading: false
                             })
+                        } else {
+                            that.connectFail()
                         }
+                    },
+                    fail(res) {
+                        that.connectFail()
                     }
                 })
             }else{
@@ -153,8 +167,8 @@ Component({
                     url: 'http://jianghuling.top/lost/item',
                     filePath: this.data.other_image,
                     name: 'image',
-                    formData: { //app.globalData.userId
-                        userId: 'abcde',
+                    formData: { // 'abcde'
+                        userId: app.globalData.userId,
                         category: this.data.other_category,
                         desc: this.data.other_description,
                         claimMethod: this.data.other_location
@@ -172,7 +186,12 @@ Component({
                                 hasImage: false,
                                 loading: false
                             })
+                        } else {
+                            that.connectFail()
                         }
+                    },
+                    fail(res) {
+                        that.connectFail()
                     }
                 })
             }
