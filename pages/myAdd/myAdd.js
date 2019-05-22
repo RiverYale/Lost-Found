@@ -78,6 +78,11 @@ Component({
                                 }
                             }
                         })
+                    }else{
+                        wx.showToast({
+                            title: '物品似乎已经被领取了...',
+                            icon: 'none'
+                        })
                     }
                 }
             })

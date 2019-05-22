@@ -34,6 +34,12 @@ startdate: 2019/4/28
 
   <scroll-view scroll-y='true' style="height : {{scrollHeight}}px" class='scrollitem' bindscrolltolower="loadMoreData">
 
+    <view class='hasNoData' wx:if="{{cardslength == 0 && curNav == 0 || itemslength == 0 && curNav != 0}}">
+      <image class='noDataIcon' src='../../images/zanWuXinXi.png'></image>
+      <view class='noDataInfo'>暂无信息</view>
+    </view>
+
+
     <view class="{{curNav==0?'hiden':'nav_right'}}">
       <block wx:for="{{iteminfo.lost_item_list}}" wx:key='index'>
         <view class="nav_right_items" bindtap='showitemsinfo' data-index='{{index}}'>
@@ -116,7 +122,7 @@ startdate: 2019/4/28
         </view>
       </view>
       <view class="padding-xl">
-      {{cmsg}}
+        {{cmsg}}
       </view>
     </view>
   </view>

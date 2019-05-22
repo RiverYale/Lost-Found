@@ -2,7 +2,7 @@
 @import "../../colorui/main.wxss";
 @import "../../colorui/icon.wxss";
 
-.lost_container{
+.lost_container {
   width: 100%;
   height: 100%;
 }
@@ -146,7 +146,6 @@
   width: 160rpx;
   font-size: 28rpx;
 }
-
 
 .tixing {
   margin-left: 7rpx;
@@ -443,6 +442,7 @@
 }
 
 .scrollitem {
+  position: relative;
   height: 300px;
   width: 100%;
   display: flex;
@@ -467,4 +467,28 @@
 
 .input_search {
   text-align: left;
+}
+
+.hasNoData {
+  position: absolute;
+  height: 202rpx;
+  width: 152rpx;
+  left: 299rpx;
+  top: 192rpx;
+}
+
+.noDataIcon {
+  width: 152rpx;
+  height: 152rpx;
+}
+
+.noDataInfo {
+  margin-left: 18rpx;
+  margin-top: 22rpx;
+  width: 112rpx;
+  height: 28rpx;
+  font-size: 28rpx;
+  font-weight: 400;
+  color: rgba(204, 204, 204, 1);
+  line-height: 28rpx;
 }

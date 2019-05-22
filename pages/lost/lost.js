@@ -16,12 +16,12 @@ Page({
     btn_1index: 0,
     curNav: 0,
     itemsinfo: 0,
-    cardinfo: [],
-    iteminfo: [],
+    cardinfo: {},
+    iteminfo: {},
     itemid: 0,
     btn_1_size: 0,
-    // hasMoreData: true,
-    // isRefreshing: false,
+    cardslength: 0,
+    itemslength: 0,
     isLoadingMoreData: false,
     isLoad: false,
     nowPage: 0,
@@ -140,6 +140,7 @@ Page({
     })
     var left = this.data.navLeftItems[e.currentTarget.dataset.index];
     this.lostrequest(left);
+    this.getCardLength();
   },
   showitemsinfo: function(e) {
     this.setData({
@@ -211,7 +212,8 @@ Page({
     this.setData({
       cardinfo: [],
       showplace:false,
-      cardplace: false
+      cardplace: false,
+      nowPage: 0
     })
     var left = "校园卡";
     this.lostrequest(left);
@@ -236,20 +238,25 @@ Page({
             for (var i = 0; i < res.data.lost_card_list.length; i++) {
               list.lost_card_list.push(res.data.lost_card_list[i]);
             }
+            console.log("now",res)
             var t = false;
-            if (res.data.lost_card_list.length == 0 || res.data.lost_card_list.length < 10) {
+            if (res.data.lost_card_list.length < 10) {
               t = true;
             }
             that.setData({
               cardinfo: list,
               bottomLoading: false,
               isLoad: t,
+              isLoadingMoreData: false
             })
           } else {
             that.setData({
               cardinfo: res.data,
+              isLoadingMoreData: false,
+              isLoad: false
             })
           }
+          that.getCardLength();
         } else {
           if (Object.keys(that.data.iteminfo).length != 0) {
             var list = that.data.iteminfo;
@@ -270,6 +277,7 @@ Page({
               iteminfo: res.data,
             })
           }
+          that.getItemLength();
         }
       },
       fail: function(res) {
@@ -305,6 +313,7 @@ Page({
         that.setData({
           cardinfo: res.data
         })
+        that.getCardLength();
       },
       fail: function(res) {
         console.log("请求失败")
@@ -330,6 +339,7 @@ Page({
           iteminfo: res.data,
           isLoadingMoreData: false
         })
+        that.getItemLength();
       },
       fail: function(res) {
         console.log("请求失败")
@@ -352,7 +362,7 @@ Page({
     var left = (this.data.curNav == 0 ? "校园卡" : "物品");
     setTimeout(function() {
       that.lostrequest(left); //数据请求
-    }, 600) //延迟时间 这里是1秒
+    }, 1000) //延迟时间 这里是1秒
   },
   showModal(message) {
     this.setData({
@@ -364,5 +374,26 @@ Page({
     this.setData({
       modalName: null
     })
+  },
+  getCardLength:function(){
+    // var l = Object.keys(this.data.cardinfo).length;
+    var l = 0;
+    for(var x in this.data.cardinfo.lost_card_list ){
+      l++;
+    }
+    this.setData({
+      cardslength: l
+    })
+    console.log("the length of lost_card_list",l)
+  },
+  getItemLength:function(){
+    var l = 0;
+    for (var x in this.data.iteminfo.lost_item_list) {
+      l++;
+    }
+    this.setData({
+      itemslength: l
+    })
+    console.log("the length of lost_item_list", l)
   }
 })
