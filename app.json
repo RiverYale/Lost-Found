@@ -39,7 +39,7 @@
     "window": {
         "backgroundTextStyle": "light",
         "navigationBarBackgroundColor": "#5673fd",
-        "navigationBarTitleText": "iRstoo | 高校失物招领",
+        "navigationBarTitleText": "腾寻 | 高校失物招领",
         "navigationBarTextStyle": "white"
     },
     "sitemapLocation": "sitemap.json"
