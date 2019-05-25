@@ -3,6 +3,7 @@ const app = getApp()
 
 Page({
   data: {
+    placeholder: ["输入姓名检索", "输入物品描述检索", "输入物品描述检索", "输入物品描述检索", "输入物品描述检索", "输入物品描述检索"],
     sindex: 0,
     skind: 0,
     cmsg: '',

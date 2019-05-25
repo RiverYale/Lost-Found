@@ -18,7 +18,7 @@ startdate: 2019/4/28
     <view class="cu-bar search bg-white">
       <view class="search-form round">
         <text class="cuIcon-search"></text>
-        <input type="text" placeholder="搜索失物" confirm-type="search" style="width: 480rpx;" bindconfirm='search'></input>
+        <input type="text" placeholder="{{placeholder[curNav]}}" confirm-type="search" style="width: 480rpx;" bindconfirm='search'></input>
       </view>
     </view>
 
@@ -83,11 +83,11 @@ startdate: 2019/4/28
   <view class="{{zhezhao1==false ? 'hiden' : 'zhezhao1'}} ">
     <view class='zhezhaoContent'>
       <image src='../../images/close.png' class='close' bindtap='cancel1'></image>
-      <view wx:if="{{chakanbutton}} " class='chakanModal'>
+      <view wx:if="{{chakanbutton}}" class='chakanModal'>
         <view class='chakanmsg'>请确认是您的物品</view>
         <button class='btn_chakan' bindtap='chakanModal'>确认</button>
       </view>
-      <view wx:else class='{{completeinfo}}'>{{completedmsg}}</view>
+      <view wx:else class='completeinfo'>{{completedmsg}}</view>
     </view>
   </view>
 
