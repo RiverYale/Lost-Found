@@ -75,12 +75,12 @@ Component({
 
         tapService: function() {
             wx.showActionSheet({
-                itemList: ['QQ客服：00000000', 'QQ交流群：00000001'],
+                itemList: ['QQ客服：2743263948', 'QQ交流群：758488033'],
                 success(res) {
                     if(res.tapIndex == 0){
-                        wx.setClipboardData({ data: '00000000' })
+                        wx.setClipboardData({ data: '2743263948' })
                     }else{
-                        wx.setClipboardData({ data: '00000001' })
+                        wx.setClipboardData({ data: '758488033' })
                     }
                 }
             })
