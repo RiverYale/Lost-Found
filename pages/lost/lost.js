@@ -3,7 +3,7 @@ const app = getApp()
 
 Page({
   data: {
-    placeholder: ["输入姓名检索", "输入物品描述检索", "输入物品描述检索", "输入物品描述检索", "输入物品描述检索", "输入物品描述检索"],
+    placeholder: ["完整输入姓名检索", "输入物品描述检索", "输入物品描述检索", "输入物品描述检索", "输入物品描述检索", "输入物品描述检索"],
     sindex: 0,
     skind: 0,
     cmsg: '',
@@ -357,15 +357,7 @@ Page({
       method: 'POST',
       success: function(res) {
         console.log("555",res.data)
-        var destination = res.data;
-        var k = res.data.lost_item_list;
-        var k1=res.data;
-        k1.lost_item_list=[];
-        for(let i=0; i<k.length;i++){
-          if(k[i].category == that.data.navLeftItems[that.data.curNav]){
-            k1.lost_item_list.push(k[i]);
-          }
-        }
+        
         that.setData({
           iteminfo: res.data,
           isLoadingMoreData: false

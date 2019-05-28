@@ -84,7 +84,9 @@ startdate: 2019/4/28
     <view class='zhezhaoContent'>
       <image src='../../images/close.png' class='close' bindtap='cancel1'></image>
       <view wx:if="{{chakanbutton}}" class='chakanModal'>
-        <view class='chakanmsg'>请确认是您的物品</view>
+        <view class='chakanmsg1'>请确认是您的物品</view>
+        <view class='chakanmsg2'>点击确认后，其他人将不可见此失物
+如误点，可在[我的]界面-撤回领取</view>
         <button class='btn_chakan' bindtap='chakanModal'>确认</button>
       </view>
       <view wx:else class='completeinfo'>{{completedmsg}}</view>
