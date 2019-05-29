@@ -6,7 +6,9 @@ Component({
         isLoading: false,
         pageNo: 0,
         pageSize: 15,
-        dataArray: []
+        dataArray: [],
+        showBoard: false,
+        boardText: ''
     },
 
     lifetimes: {
@@ -104,6 +106,26 @@ Component({
 
         onReachBottom: function () {
             this.requestData()
+        },
+
+        showLocation: function(e) {
+            let i = e.currentTarget.dataset.index
+            this.setData({ 
+                showBoard: true,
+                boardText: this.data.dataArray[i].take_place
+            })
+        },
+
+        showDescription: function(e) {
+            let i = e.currentTarget.dataset.index
+            this.setData({
+                showBoard: true,
+                boardText: this.data.dataArray[i].description
+            })
+        },
+
+        closeBoard: function() {
+            this.setData({ showBoard: false })
         }
     }
 })

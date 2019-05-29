@@ -243,7 +243,7 @@ Page({
       url: app.globalData.url + '/lost/showInfo',
       data: {
         pageNo: this.data.nowPage, //设置为全局变量，在每次切换栏目的后都会重新清零
-        pageSize: 10,
+        pageSize: 20,
         category: left
       },
       header: {
