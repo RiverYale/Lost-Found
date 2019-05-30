@@ -1,4 +1,14 @@
 /* pages/home/home.wxss */
+page {
+    background-color: #f3f3f3;
+    height: 100%;
+    line-height: 1.5;
+}
+
+.head-container{
+  background: white;
+}
+
 .userinfo-container{
   display: flex;
   align-items: center;
@@ -9,7 +19,7 @@
   width: 70px;
   height: 70px;
   border-radius: 50%;
-  margin-top: 5px;
+  margin-top: 15px;
 }
 
 .num-container{
@@ -37,13 +47,13 @@
 }
 
 .line-ver{
-    background: #cac8c8;
+    background: #cfcfcf ;
     width: 1px;
     height: 40px;
 }
 
 .line-hor{
-    background: #cac8c8;
+    background: #f3f3f3;
     width: 100%;
     height: 1px;
 }
@@ -53,6 +63,8 @@
   align-items: center;
   flex-direction: row;
   font-size: 18px;
+  margin-top: 2px;
+  background: white;
 }
 
 .icon{

@@ -1,7 +1,7 @@
 <!--pages/login/login.wxml-->
 <image class='backgroundImage' src='/images/cover.jpg'></image>   
 <view wx:if="{{userId != ''}}">
-    <button class="loginButton" open-type="getUserInfo" bindgetuserinfo="getUserInfo" wx:if="{{school !== '选择高校'}}">></button>
+    <button class="loginButton" open-type="getUserInfo" bindgetuserinfo="getUserInfo" wx:if="{{school !== '选择高校'}}" space='emsp'>></button>
     <view class='container'>
         <picker bindchange='bindPickerChange' value='{{index}}' range="{{schools}}">{{school}}</picker>
     </view>
