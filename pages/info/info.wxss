@@ -11,6 +11,7 @@ page {
     margin-top: 5px;
     font-size: 18px;
     height: 45px;
+    width: 100%;
     align-items: center;
     flex-direction: row;
 }

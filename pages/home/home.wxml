@@ -1,7 +1,8 @@
 <!--pages/home/home.wxml-->
 <view class='head-container'>
     <view class='userinfo-container'>
-        <image class="userinfo-avatar" mode="cover" src="{{userInfo.avatarUrl}}"></image>
+        <button class="get-userinfo-avatar" open-type="getUserInfo" bindgetuserinfo="getUserInfo" wx:if='{{userInfo.avatarUrl == null}}'>获取头像</button>
+        <image class="userinfo-avatar" mode="cover" src="{{userInfo.avatarUrl}}" wx:else></image>
         <text style='margin-top:5px;font-size:20px;'>{{userInfo.nickName}}</text>
     </view>
     <view class='num-container'>

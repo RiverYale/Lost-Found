@@ -84,6 +84,21 @@ Component({
                     }
                 }
             })
+        },
+
+        getUserInfo: function (e) {
+            if (e.detail.userInfo === undefined) {
+                wx.showToast({
+                    title: '获取失败',
+                    icon: 'none'
+                })
+            } else {
+                app.globalData.userInfo = e.detail.userInfo
+                this.setData({
+                    userInfo: e.detail.userInfo,
+                    hasUserInfo: true
+                })
+            }
         }
     }
 })
