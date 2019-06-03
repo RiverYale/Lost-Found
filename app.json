@@ -13,8 +13,6 @@
         "custom": true,
         "color": "#7A7E83",
         "selectedColor": "#6495ED",
-        "borderStyle": "black",
-        "backgroundColor": "#ffffff",
         "list": [
             {
                 "pagePath": "pages/lost/lost",
